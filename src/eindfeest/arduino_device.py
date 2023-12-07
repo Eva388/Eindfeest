@@ -10,7 +10,7 @@ class ArduinoVISADevice:
             args {[str]} --The port to which the arduino device is connected
         """        
         self.port = port
-        self.device = rm.open_resource( self.port, read_termination="\r\n", write_termination="\n") #opens the arduino
+        self.device = rm.open_resource(self.port, read_termination="\r\n", write_termination="\n") #opens the arduino
 
 
 

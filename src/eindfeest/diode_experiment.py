@@ -71,3 +71,5 @@ def list_devices(): #lists current resources, I dont know if this works because 
         [str] --[lists the open devices connected with the PC]
     """
     return(rm.list_resources())
+
+print(list_devices())
