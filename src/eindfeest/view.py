@@ -11,7 +11,7 @@ def do_your_thing_python():
      plots the measurements and saves them to a csv file called 'metingen'
     """
     data = DiodeExperiment("ASRL11::INSTR")                #Does the thing
-    V,R,Vmos = data.scan(0,1023,10)    
+    V,R,Vmos,Vmoserr = data.scan(0,1023,10)    
     plt.plot(V,Vmos/R)
     # plt.errorbar(Vav,Iav,Ierr,Verr,fmt='none')      #Plotting with our errorbars
     plt.title('UI curve of LED')

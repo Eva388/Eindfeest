@@ -50,8 +50,8 @@ class DiodeExperiment:
                 Vzon[k] = 3 * self.device.get_input_voltage(1)             #Measure voltage LED
                 Vmos[k] = Vzon[k] - self.device.get_input_voltage(2)
 
-            # Vmosstd[i-low] =np.std(Vmos)/sqrt(n)   #For all the n measurements, the average and std for Vres and Vled added here
-            # Vzonstd[i-low] = np.std(Vzon)/sqrt(n)
+            Vmosstd[i-low] =np.std(Vmos)/sqrt(n)   #For all the n measurements, the average and std for Vres and Vled added here
+            Vzonstd[i-low] = np.std(Vzon)/sqrt(n)
             Vmosavg[i-low] = np.average(Vmos)
             Vzonavg[i-low] = np.average(Vzon)
 
@@ -64,7 +64,7 @@ class DiodeExperiment:
         self.device.set_output_value(0)
         self.device.close()     #Closes the arduino
 
-        return Vzonavg, Rzon,Vmosavg
+        return Vzonavg, Rzon,Vmosavg,Vmosstd
 
 rm = pyvisa.ResourceManager("@py") #Does rm
 def list_devices(): #lists current resources, I dont know if this works because on my pc this gives a warning and i have to download stuff
