@@ -58,13 +58,15 @@ class DiodeExperiment:
         I_u2 = Vmosavg/R_u2     #Calculating Iled and std on Iled
         # Imosstd = Vmosstd/R_u2
         Rzon = Vzonavg / I_u2
+
+        Izonavg = I_u2 + (Vzonavg/3)
         # Imos = I_u2
         # Izon = Vzon / Rzon
         # Izonstd = Vzonstd/R_u2
         self.device.set_output_value(0)
         self.device.close()     #Closes the arduino
 
-        return Vzonavg, Rzon,Vmosavg,Vmosstd
+        return Vzonavg, Izonavg
 
 rm = pyvisa.ResourceManager("@py") #Does rm
 def list_devices(): #lists current resources, I dont know if this works because on my pc this gives a warning and i have to download stuff
