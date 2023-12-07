@@ -39,7 +39,7 @@ class ArduinoVISADevice:
         self.output = value
 
 
-    def get_output_value(self): #REturns current power (voltage)
+    def get_output_value(self): #Returns current power (voltage)
         """Returns the current output voltage in adc
 
         Returns:
@@ -80,3 +80,10 @@ def list_devices(): #lists current resources, I dont know if this works because 
         [str] --[lists the open devices connected with the PC]
     """
     return(rm.list_resources())
+
+# device  = ArduinoVISADevice("ASRL11::INSTR")
+# print(device.set_output_value(10923))
+# print(device.get_output_value())
+# print(device.get_input_voltage(0)) 
+# print(device.get_input_voltage(1))
+# print(device.get_input_voltage(2))     

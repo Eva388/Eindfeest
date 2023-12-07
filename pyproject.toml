@@ -11,6 +11,7 @@ python = "^3.10"
 numpy = "^1.26.2"
 matplotlib = "^3.8.2"
 pyvisa-py = "^0.7.1"
+pyserial = "^3.5"
 
 
 [build-system]
@@ -18,4 +19,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-diode = "EINDFEEST-ME.diode-experiment:scan"
+diode = "eindfeest.diode-experiment:scan"
